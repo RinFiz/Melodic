@@ -1,4 +1,4 @@
 # Melodic
 Listen to different soundscapes from nature.
 
-A random website idea.
+Check out the video on how I made it here: https://youtu.be/rlNGPXNEkZY 
