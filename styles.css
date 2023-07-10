@@ -1,0 +1,86 @@
+ html {
+            background-image: linear-gradient(to right, aquamarine, #3aa8c1);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: grid;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .button-container.rain {
+          background-image: linear-gradient(to right, skyblue, #3F88C5);
+        }
+
+        .button-container.thunder {
+            background-image: linear-gradient(to right, #808080, 
+            #333333);
+        }
+
+        .button-container.ocean {
+            background-image: linear-gradient(to right, #00FFFF, 
+            #008080);
+        }
+
+        .button-container.campfire {
+            background-image: linear-gradient(to right, #FFA500, 
+            #FF4500);
+        }
+      
+        .button-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 20px;
+            padding: 10px;
+            transition: transform 0.3s;
+            border: 2px solid white;
+            cursor: pointer;
+            width: 300px;
+        }
+
+        .button-container:hover {
+            transform: scale(1.1);
+        }
+
+        .button-container img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            border-radius: 20px;
+        }
+
+        .button-container span {
+            margin-right: 10px;
+        }
+
+        .button-container .play-pause {
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border: none;
+            margin-left: 10px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        .button-container.playing .play-pause {
+            background-image: url('https://icons.veryicon.com/png/o/object/material-design-icons/pause-37.png');
+        }
+
+        .button-container.paused .play-pause {
+            background-image: url('https://www.transparentpng.com/thumb/play-button/MF743g-play-button-amazing-image-download.png');
+        }
