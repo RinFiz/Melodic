@@ -2,98 +2,12 @@
 <html>
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melodic</title>
-    <style>
-        html {
-            background-image: linear-gradient(to right, aquamarine, #3aa8c1);
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 50px;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
-
-        .buttons {
-            display: grid;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .button-container.rain {
-          background-image: linear-gradient(to right, skyblue, #3F88C5);
-        }
-
-        .button-container.thunder {
-            background-image: linear-gradient(to right, #808080, 
-            #333333);
-        }
-
-        .button-container.ocean {
-            background-image: linear-gradient(to right, #00FFFF, 
-            #008080);
-        }
-
-        .button-container.campfire {
-            background-image: linear-gradient(to right, #FFA500, 
-            #FF4500);
-        }
-      
-        .button-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-radius: 20px;
-            padding: 10px;
-            transition: transform 0.3s;
-            border: 2px solid white;
-            cursor: pointer;
-            width: 300px;
-        }
-
-        .button-container:hover {
-            transform: scale(1.1);
-        }
-
-        .button-container img {
-            width: 100px;
-            height: 100px;
-            margin-right: 10px;
-            border-radius: 20px;
-        }
-
-        .button-container span {
-            margin-right: 10px;
-        }
-
-        .button-container .play-pause {
-            width: 50px;
-            height: 50px;
-            background-color: transparent;
-            border: none;
-            margin-left: 10px;
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: center;
-        }
-
-        .button-container.playing .play-pause {
-            background-image: url('https://icons.veryicon.com/png/o/object/material-design-icons/pause-37.png');
-        }
-
-        .button-container.paused .play-pause {
-            background-image: url('https://www.transparentpng.com/thumb/play-button/MF743g-play-button-amazing-image-download.png');
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+	<script src="script.js"></script>
 </head>
 <body>
-  
     <h1>Melodic</h1>
     <h2>Play your favorite sounds and noises from nature.</h2>
   
@@ -138,42 +52,5 @@
   <audio id="campfire-audio">
     <source src="https://drive.google.com/uc?export=download&id=1oYFoBxDiG7_v39TRCV_-va2L2eJQmGbI" type="audio/mpeg">
 </audio>
-
-    <script>
-        const buttonContainers = document.querySelectorAll('.button-container');
-
-        buttonContainers.forEach(container => {
-            const playPauseButton = container.querySelector('.play-pause');
-            let audio;
-
-            if (container.classList.contains('rain')) {
-                audio = new Audio('https://drive.google.com/uc?export=download&id=1tXQetbBiC9VSzHhhqhr1ZVNpWiCsvCX-');
-            } else if (container.classList.contains('ocean')) {
-                audio = new Audio('https://drive.google.com/uc?export=download&id=15s4a_I2zjoCWsdzQM-F6Ykq68AWev-iE');
-            } else if (container.classList.contains('thunder')) {
-                audio = new Audio('https://drive.google.com/uc?export=download&id=1vcbE6jamX_oExN0L7vqHLra5eI9zqftR');
-            } else if (container.classList.contains('campfire')) {
-                audio = new Audio('https://drive.google.com/uc?export=download&id=1oYFoBxDiG7_v39TRCV_-va2L2eJQmGbI');
-            }
-
-            let isPlaying = false;
-
-            container.addEventListener('click', () => {
-                if (isPlaying) {
-                    container.classList.remove('playing');
-                    container.classList.add('paused');
-                    playPauseButton.style.backgroundImage = "url('https://www.transparentpng.com/thumb/play-button/MF743g-play-button-amazing-image-download.png')";
-                    audio.pause();
-                    isPlaying = false;
-                } else {
-                    container.classList.remove('paused');
-                    container.classList.add('playing');
-                    playPauseButton.style.backgroundImage = "url('https://icons.veryicon.com/png/o/object/material-design-icons/pause-37.png')";
-                    audio.play();
-                    isPlaying = true;
-                }
-            });
-        });
-    </script>
 </body>
 </html>
